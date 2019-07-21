@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POMODORO</title>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .work-space {
+            /* border: 1px solid black; */
+            height: 100vh;
+            max-width: 420PX;
+            position: relative;
+            background: -webkit-linear-gradient(#DB5F4D, #FFFFFF);
+            background: -o-linear-gradient(#DB5F4D, #FFFFFF);
+            background: -moz-linear-gradient(#DB5F4D, #FFFFFF);
+            background: linear-gradient(#DB5F4D, #FFFFFF);
+            min-width: 450px;
+        }
+
+        .work-space>.alpha {
+            background-color: #FFFFFF;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.46;
+        }
+
+        .work-space>.title-block {
+            right: -50%;
+            width: 200%;
+            height: 100vh;
+            top: 40%;
+            position: absolute;
+            background-color: #FFFFFF;
+            border-radius: 50% 50% 0 0;
+            z-index: 1;
+        }
+
+        .work-space>.tomato {
+            min-width: 42%;
+            height: 26.1%;
+            height: 26vh;
+            /* max-width: 200px;
+            min-width: 112.5px; */
+            background-color: #FFFFFF;
+            position: absolute;
+            border-radius: 50%;
+            border: 20px solid #E6E653;
+            top: 20%;
+            left: 25%;
+            z-index: 2;
+
+        }
+
+        .work-space>.tomato2 {
+            width: 38%;
+            /* height: 38%; */
+            height: 24vh;
+            background-color: #E6E653;
+            position: absolute;
+            border-radius: 50%;
+            top: 24%;
+            left: 31.5%;
+            z-index: 2;
+
+            max-width: 200px;
+            min-width: 112.5px;
+
+        }
+
+        .work-space>.tomato3 {
+            width: 34%;
+            height: 34%;
+            height: 21vh;
+            background-color: #E6E653;
+            background-size: 100vw 100vh;
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            top: 25.3%;
+            left: 33.2%;
+            z-index: 2;
+            max-width: 200px;
+            min-width: 112.5px;
+        }
+
+        .work-space>.tomato_red {
+
+            height: 220px;
+            width: 110px;
+            height: 31vh;
+            top: 20%;
+            left: 25%;
+            position: absolute;
+            background-color: #E65B45;
+            border-radius: 110px 0 0 110px;
+            border: 2.5px solid #E65B45;
+            z-index: 4;
+        }
+
+
+
+        .work-space>.straw_half {
+            width: 5%;
+            height: 10%;
+            float: left;
+            background-color: #29996D;
+            box-sizing: border-box;
+            background: linear-gradient(to left,
+                    #499979 50%, #29996D 50%);
+            /* 漸變 */
+            /* background: linear-gradient(to left,
+                    #499979 50%, #29996D 50%); */
+            position: absolute;
+            border-radius: 50%;
+            top: 16%;
+            left: 48.2%;
+            z-index: 1;
+        }
+
+        .work-space>.straw_green {
+            width: 5%;
+            height: 10%;
+            background-color: #29996D;
+            position: absolute;
+            border-radius: 50%;
+            top: 16%;
+            left: 44%;
+            z-index: 1;
+        }
+
+        .work-space>.straw_lightgreen {
+            width: 5%;
+            height: 10%;
+            background-color: #499979;
+            position: absolute;
+            border-radius: 50%;
+            top: 16%;
+            left: 52.5%;
+            z-index: 1;
+        }
+
+
+        p {
+            text-align: center;
+            color: #E66753;
+            position: relative;
+            z-index: 2;
+            top: -40%;
+            font-size: 50px;
+            font-family: Gen Jyuu Gothic P Light;
+        }
+
+        .ver {
+            height: 100vh;
+            text-align: center;
+            color: #E66753;
+            position: relative;
+            z-index: 2;
+            top: -32%;
+            font-size: 15px;
+            font-family: Yu Gothic Medium;
+            max-width: 800px;
+
+            min-width: 450px;
+
+        }
+
+        .seed {
+
+            width: auto;
+            height: auto;
+            max-width: 2.9%;
+            max-height: 2.9%;
+            position: absolute;
+            z-index: 3;
+            top: 27.5%;
+            left: 49.2%;
+        }
+
+        .seed45 {
+            width: auto;
+            height: auto;
+            max-width: 2.9%;
+            max-height: 2.9%;
+            position: absolute;
+            z-index: 3;
+            top: 29.4%;
+            left: 57%;
+
+            transform: rotate(45deg)
+        }
+
+
+        .seed90 {
+            width: auto;
+            height: auto;
+            max-width: 2.9%;
+            max-height: 2.9%;
+            position: absolute;
+            z-index: 3;
+            top: 34.5%;
+            left: 60.4%;
+            transform: rotate(90deg)
+        }
+
+        .seed135 {
+            width: auto;
+            height: auto;
+            max-width: 2.9%;
+            max-height: 2.9%;
+            position: absolute;
+            z-index: 3;
+            top: 39.5%;
+            left: 57%;
+            transform: rotate(135deg)
+        }
+
+        .seed180 {
+            width: auto;
+            height: auto;
+            max-width: 2.9%;
+            max-height: 2.9%;
+            position: absolute;
+            z-index: 3;
+            top: 41.5%;
+            left: 49.2%;
+            transform: rotate(180deg)
+        }
+
+        .curve {
+            width: auto;
+            height: auto;
+            max-width: 20%;
+            max-height: 20%;
+
+            /* background-color: #29996D; */
+            position: absolute;
+            z-index: 4;
+            top: 23.2%;
+            left: 29%;
+
+        }
+
+        .line {
+            width: auto;
+            height: auto;
+            max-width: 46%;
+            max-height: 46%;
+            /* background-color: #29996D; */
+            transform: rotate(-90deg);
+            position: absolute;
+            z-index: 4;
+            top: 30%;
+            left: 42%;
+        }
+
+        .bg_light {
+            width: auto;
+            height: auto;
+            max-width: 70%;
+            max-height: 70%;
+            position: absolute;
+            top: 10%;
+            left: 15.5%;
+
+            /* background-color: #29996D; */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="work-space">
+        <div class="alpha"></div>
+        <div class="tomato"></div>
+        <div class="tomato2"></div>
+        <div class="tomato3"></div>
+        <div class="tomato_red"></div>
+        <!-- 紅色半圓 -->
+        <div class="straw_half"></div>
+        <!-- 1/2草 -->
+        <div class="straw_green"></div>
+        <!-- 草 -->
+        <div class="straw_lightgreen"></div>
+        <!-- 草淺綠 -->
+
+        <div class="title-block">
+            <div class="circle2_1"></div>
+        </div>
+
+        <p>POMODORO</p>
+        <p class="ver">1.10</p>
+
+        <img class="seed" src="籽.png" alt="籽">
+        <img class="seed45" src="籽.png" alt="籽">
+        <img class="seed90" src="籽.png" alt="籽">
+        <img class="seed135" src="籽.png" alt="籽">
+        <img class="seed180" src="籽.png" alt="籽">
+        <img class="curve" src="弧線.png" alt="弧線">
+        <img class="line" src="線.png" alt="線">
+        <img class="bg_light" src="Rectangle 235.png" alt="背光">
+
+</body>
+
+</html>
